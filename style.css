@@ -1,0 +1,158 @@
+:root {
+  /* Font */
+  --primayFont: "Montserrat", sans-serif;
+  --sFont: "Fraunces", serif;
+
+  /* Primary Color */
+  --darkCyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+
+  /* Natural Color */
+  --darkBlue: hsl(212, 21%, 14%);
+  --grayBlue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--primayFont);
+  font-weight: 400;
+  font-size: 14px;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-family: var(--sFont);
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  width: 600px;
+  display: flex;
+}
+
+.card_image {
+  flex-basis: 50%;
+}
+
+.card_image img.desktop {
+  border-radius: 10px 0 0 10px;
+  display: block;
+}
+
+.card_image img.mobile {
+  border-radius: 10px 10px 0 0;
+  display: none;
+}
+
+.card_body {
+  flex-basis: 50%;
+  background: var(--white);
+  border-radius: 0 10px 10px 0;
+  padding: 30px;
+}
+
+.card_body h2 {
+  color: var(--darkBlue);
+  font-size: 32px;
+}
+
+.card_body h6 {
+  color: var(--grayBlue);
+  font-family: var(--primayFont);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.card_body p {
+  font-size: 14px;
+  color: var(--grayBlue);
+  line-height: 1.5em;
+  font-weight: 400;
+}
+
+.card_body p.price {
+  font-family: var(--sFont);
+  color: var(--darkCyan);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.card_body p.price span {
+  font-family: var(--primayFont);
+  color: var(--grayBlue);
+  font-size: 14px;
+  text-decoration: line-through;
+  position: relative;
+  top: -5px;
+}
+
+.card_body button {
+  background: var(--darkCyan);
+  border: 0;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  color: var(--white);
+}
+
+.card_body button img {
+  display: inline-block;
+  padding-right: 10px;
+  position: relative;
+  top: 3px;
+  cursor: pointer;
+}
+
+/* Responsive Style */
+@media only screen and (max-width: 600px) {
+  body {
+    align-items: flex-start;
+  }
+  .card {
+    width: 90%;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .card_image img.desktop {
+    display: none;
+  }
+  .card_image img.mobile {
+    display: block;
+  }
+  .card_body {
+    border-radius: 0 0 10px 10px;
+  }
+}
